@@ -1,0 +1,24 @@
+server:
+  servlet:
+    contextPath: /booking-app
+
+# DB connection information is put here temporarily.
+# normally they should be in test and dev yml files, or in a cloud config, or in env variables, or in secret manager in AWS, or K8S Secrets
+
+spring:
+  datasource:
+    username: sa
+    url: jdbc:h2:mem:hostfullydb
+    driverClassName: org.h2.Driver
+    password: ''
+  h2:
+    console:
+      enabled: 'true'
+      path: /h2-ui
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+    show-sql: 'true'
+    hibernate:
+      ddl-auto: update
